@@ -6,7 +6,7 @@ var server = require("http").createServer(app);
 var io = require("socket.io")(server);
 var port = process.env.PORT || 3000;
 
-var firebaseRef = new Firebase("https://blistering-inferno-6120.firebaseio.com/colors");
+var firebaseRef = new Firebase("https://burning-limbo-666.firebaseio.com/colors");
 
 server.listen(port, function() {
   console.log("Server listening on port %d", port);

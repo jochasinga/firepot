@@ -3,7 +3,7 @@ var five = require("johnny-five");
 
 // Create a new instance of Firebase db
 var firebaseRef = new Firebase(
-  "https://blistering-inferno-6120.firebaseio.com/colors"
+  "https://burning-limbo-666.firebaseio.com/colors"
 );
 
 five.Board().on("ready", function() {
