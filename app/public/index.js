@@ -1,16 +1,18 @@
+// Initialize client socket
 var socket = io();
 
 // Register firebase module
-var app = angular.module("sampleApp", ["firebase"]);
+var app = angular.module("app", ["firebase"]);
 
-app.controller("SampleCtrl", function($scope, $firebase) {
-    var ref = new Firebase(
-      "https://blistering-inferno-6120.firebaseio.com/colors"
+// Set up controller function
+app.controller("Ctrl", function($scope, $firebase) {
+    var firebaseRef = new Firebase(
+      "https://burning-limbo-6666.firebaseio.com/colors"
     );
     // create an AngularFire ref to the data
-    var sync = $firebase(ref);
+    var sync = $firebase(firebaseRef);
 
-    // pull the data into a local copy
+    // pull the data into a local model
     var syncObject = sync.$asObject();
 
     // sync the object with three-way data binding

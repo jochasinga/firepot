@@ -4,7 +4,7 @@ var five = require("johnny-five");
 // Create a new reference of Firebase db
 var firebaseRef = new Firebase(
   // fictional URL, replace it with your own from Firebase
-  "https://burning-limbo-6660.firebaseio.com/colors"
+  "https://burning-limbo-6666.firebaseio.com/colors"
 );
 
 five.Board().on("ready", function() {
@@ -30,14 +30,14 @@ five.Board().on("ready", function() {
 
     // Map dynamic color brightness to pot value
     // RED - MAGENTA - BLUE
-    var redDec   = five.Fn.map(self, offset, offset*2, 255, 0);
-    var blueInc  = five.Fn.map(self, 0, offset, 0, 255);
+    var redDec   = Math.round(five.Fn.map(self, offset, offset*2, 255, 0));
+    var blueInc  = Math.round(five.Fn.map(self, 0, offset, 0, 255));
     // BLUE - CYAN - GREEN
-    var blueDec  = five.Fn.map(self, offset*4, offset*5, 255, 0);
-    var greenInc = five.Fn.map(self, offset*2, offset*3, 0, 255);
+    var blueDec  = Math.round(five.Fn.map(self, offset*4, offset*5, 255, 0));
+    var greenInc = Math.round(five.Fn.map(self, offset*2, offset*3, 0, 255));
     // GREEN - YELLOW - RED
-    var greenDec = five.Fn.map(self, offset*5, offset*6, 255, 0);
-    var redInc   = five.Fn.map(self, offset*4, offset*5, 0, 255);
+    var greenDec = Math.round(five.Fn.map(self, offset*5, offset*6, 255, 0));
+    var redInc   = Math.round(five.Fn.map(self, offset*4, offset*5, 0, 255));
 
     // Adjusting color brightness conditionally based on 
     // the location of the pot output value.
@@ -72,7 +72,7 @@ five.Board().on("ready", function() {
         ledArray[2].brightness(blueDec);
         ledArray[1].brightness(255);
 	// update firebase colors' child node r, g, b
-	firebaseRef.set({"r": 0, "b": blueInc, "g": 0});
+	firebaseRef.set({"r": 0, "b": blueDec, "g": 255});
         break;
       case (self > offset*4 && self <= offset*5):
         console.log("5th loop");
