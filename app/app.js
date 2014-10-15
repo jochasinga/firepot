@@ -11,6 +11,7 @@ var port = process.env.PORT || 3000;
 
 // Create a new firebase reference
 var firebaseRef = new Firebase(
+  // Replace this fictional URL with your own
   "https://burning-limbo-6666.firebaseio.com/colors"
 );
 

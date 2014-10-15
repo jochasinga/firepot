@@ -1,12 +1,10 @@
-// Initialize client socket
-var socket = io();
-
 // Register firebase module
 var app = angular.module("app", ["firebase"]);
 
 // Set up controller function
 app.controller("Ctrl", function($scope, $firebase) {
     var firebaseRef = new Firebase(
+      // Replace this fictional URL with your own
       "https://burning-limbo-6666.firebaseio.com/colors"
     );
     // create an AngularFire ref to the data
