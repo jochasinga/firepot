@@ -10,7 +10,9 @@ var io = require("socket.io")(server);
 var port = process.env.PORT || 3000;
 
 // Create a new firebase reference
-var firebaseRef = new Firebase("https://burning-limbo-6666.firebaseio.com/colors");
+var firebaseRef = new Firebase(
+  "https://burning-limbo-6666.firebaseio.com/colors"
+);
 
 // Make the server listens on port 3000
 server.listen(port, function() {
@@ -33,14 +35,6 @@ io.on("connection", function(socket) {
     console.log("snapshot R: " + colorChange.r);
     console.log("snapshot B: " + colorChange.b);
     console.log("snapshot G: " + colorChange.g);
-
-    // broadcast "color change" event with an object
-    // containing RGB data to all browser clients
-    socket.emit("color change", {
-      red: colorChange.r,
-      green: colorChange.g,
-      blue: colorChange.b
-    });
   });
 });
 

@@ -33,7 +33,7 @@ five.Board().on("ready", function() {
     var redDec   = Math.round(five.Fn.map(self, offset, offset*2, 255, 0));
     var blueInc  = Math.round(five.Fn.map(self, 0, offset, 0, 255));
     // BLUE - CYAN - GREEN
-    var blueDec  = Math.round(five.Fn.map(self, offset*4, offset*5, 255, 0));
+    var blueDec  = Math.round(five.Fn.map(self, offset*3, offset*4, 255, 0));
     var greenInc = Math.round(five.Fn.map(self, offset*2, offset*3, 0, 255));
     // GREEN - YELLOW - RED
     var greenDec = Math.round(five.Fn.map(self, offset*5, offset*6, 255, 0));
@@ -42,7 +42,7 @@ five.Board().on("ready", function() {
     // Adjusting color brightness conditionally based on 
     // the location of the pot output value.
     switch (true) {
-      case (self >= 0 && self <= offset):
+      case (self > 0 && self <= offset):
         console.log("1st loop");
         ledArray[0].brightness(255);
         ledArray[2].brightness(blueInc);
