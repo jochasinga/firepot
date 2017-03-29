@@ -10,10 +10,17 @@ var io = require("socket.io")(server);
 var port = process.env.PORT || 3000;
 
 // Create a new firebase reference
-var firebaseRef = new Firebase(
-  // Replace this fictional URL with your own
-  "https://burning-limbo-6666.firebaseio.com/colors"
-);
+//You can obtain this chunk of code by going to your firebase dashboard and selecting "Add Firebase to your web app"
+var config = {
+        apiKey: "",
+        authDomain: "",
+        databaseURL: "",
+        storageBucket: "",
+        messagingSenderId: ""
+    };
+Firebase.initializeApp(config);
+
+var firebaseRef = Firebase.database().ref();
 
 // Make the server listens on port 3000
 server.listen(port, function() {

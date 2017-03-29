@@ -5,11 +5,12 @@
   <body ng-controller="Ctrl">
     <div class="header">
       <h1 ng-style="{'background-color': 'rgb(' + data.r + ',' + data.g + ',' + data.b +')'}">
-	Afro Circus! {{ data.r }} : {{ data.g }} : {{ data.b }}
+	Afro Circus! {{ data.dsensor }} : {{ data.g }} : {{ data.b }}
       </h1>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.19/angular.min.js"></script>
-    <script src="https://cdn.firebase.com/libs/angularfire/0.8.2/angularfire.min.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
     <script src="/index.js"></script>
   </body>
 </html>
