@@ -2,10 +2,17 @@ var Firebase = require("firebase");
 var five = require("johnny-five");
 
 // Create a new reference of Firebase db
-var firebaseRef = new Firebase(
-  // fictional URL, replace it with your own from Firebase
-  "https://burning-limbo-6666.firebaseio.com/colors"
-);
+//You can obtain this chunk of code by going to your firebase dashboard and selecting "Add Firebase to your web app"
+var config = {
+        apiKey: "",
+        authDomain: "",
+        databaseURL: "",
+        storageBucket: "",
+        messagingSenderId: ""
+    };
+Firebase.initializeApp(config);
+
+var firebaseRef = Firebase.database().ref();
 
 five.Board().on("ready", function() {
   var maxValue = 511;

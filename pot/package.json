@@ -7,6 +7,6 @@
   "license": "MIT",
   "dependencies": {
     "johnny-five": "^0.8.14",
-    "firebase": "^1.1.1"
+    "firebase": "3.7.4"
   }
 }
